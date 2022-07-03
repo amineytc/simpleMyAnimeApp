@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+
+    plugins{
+        id 'androidx.navigation'
+    }
+
+    resolutionStrategy {
+
+        eachPlugin {
+
+            if (requested.id.id == 'androidx.navigation') {
+                useModule("androidx.navigation:navigation-safe-args-gradle-plugin:2.5.0")
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "MyAnimeApp"
+include ':app'

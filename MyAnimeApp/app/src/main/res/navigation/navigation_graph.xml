@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/listeFragment">
+
+    <fragment
+        android:id="@+id/listeFragment"
+        android:name="com.amine.myanimeapp.ListeFragment"
+        android:label="fragment_liste"
+        tools:layout="@layout/fragment_liste" >
+        <action
+            android:id="@+id/action_listeFragment_to_characterFragment"
+            app:destination="@id/characterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="com.amine.myanimeapp.CharacterFragment"
+        android:label="fragment_character"
+        tools:layout="@layout/fragment_character" >
+        <action
+            android:id="@+id/action_characterFragment_to_listeFragment"
+            app:destination="@id/listeFragment" />
+        <argument
+            android:name="information"
+            app:argType="string"
+            android:defaultValue="camefromthemenu" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
